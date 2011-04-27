@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_prefabsoft_security_acl_model_PrefabAclEntry" modelAttribute="prefabAclEntry" path="/prefabaclentrys" versionField="none" z="+0kPQ1F8Mdz7YZ0SvfYf440y0Yg=">
+        <field:select field="acl_object_identity" id="c_com_prefabsoft_security_acl_model_PrefabAclEntry_acl_object_identity" itemValue="id" items="${prefabaclobjectidentitys}" path="/prefabaclobjectidentitys" required="true" z="rPHsSe7wbVTMl945QetkJNl5450="/>
+        <field:input field="ace_order" id="c_com_prefabsoft_security_acl_model_PrefabAclEntry_ace_order" required="true" validationMessageCode="field_invalid_integer" z="MQcwEoNGYuvQu705rSRG4+9/71I="/>
+        <field:select field="sid" id="c_com_prefabsoft_security_acl_model_PrefabAclEntry_sid" itemValue="id" items="${prefabaclsids}" path="/prefabaclsids" required="true" z="c400OtM4/UfOWO2hX639swrnqU4="/>
+        <field:input field="mask" id="c_com_prefabsoft_security_acl_model_PrefabAclEntry_mask" required="true" validationMessageCode="field_invalid_integer" z="OAfsI8xyDeH6yj9/OANYA2bD7XQ="/>
+        <field:checkbox field="granting" id="c_com_prefabsoft_security_acl_model_PrefabAclEntry_granting" z="3fssYrpmTdtM58kiNzKQz4NJ7zg="/>
+        <field:checkbox field="audit_success" id="c_com_prefabsoft_security_acl_model_PrefabAclEntry_audit_success" z="P7lS5xx1xsQYWsl+9LDbOlEl8OM="/>
+        <field:checkbox field="audit_failure" id="c_com_prefabsoft_security_acl_model_PrefabAclEntry_audit_failure" z="DlAIKVldwLt1aQMkAm0xxB1rYn4="/>
+    </form:update>
+</div>

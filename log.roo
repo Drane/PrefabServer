@@ -1,0 +1,7 @@
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log opened at 2011-04-27 17:00:20
+project --topLevelPackage com.prefabsoft --projectName PrefabServer --java 6
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log closed at 2011-04-27 17:00:24
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log opened at 2011-04-27 17:00:30
+persistence setup --database MYSQL --provider HIBERNATE --userName jochen --password jochen --databaseName prefabserver
+security setup
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log closed at 2011-04-27 17:48:23

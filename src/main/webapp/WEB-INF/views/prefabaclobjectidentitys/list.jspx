@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_prefabsoft_security_acl_model_PrefabAclObjectIdentity" items="${prefabaclobjectidentitys}" z="AGyiWQ9eQdBZ/p2wp5QQCzVHfgI=">
+        <table:table data="${prefabaclobjectidentitys}" id="l_com_prefabsoft_security_acl_model_PrefabAclObjectIdentity" path="/prefabaclobjectidentitys" z="hMlgK9YtbckwXpSkPJuwbb+Rr6E=">
+            <table:column id="c_com_prefabsoft_security_acl_model_PrefabAclObjectIdentity_object_id_class" property="object_id_class" z="oU+PWELll8HbOA/tL7bzBnTkagg="/>
+            <table:column id="c_com_prefabsoft_security_acl_model_PrefabAclObjectIdentity_object_id_identity" property="object_id_identity" z="R0z319yr6EfiG5WvkfS6Dpv41f0="/>
+            <table:column id="c_com_prefabsoft_security_acl_model_PrefabAclObjectIdentity_parent_object" property="parent_object" z="5cw0VgU/LQnx0PsNAfOW8DfiK4E="/>
+            <table:column id="c_com_prefabsoft_security_acl_model_PrefabAclObjectIdentity_owner_sid" property="owner_sid" z="YMR0PaE0PSJfjF1prfffi9rqQ/E="/>
+            <table:column id="c_com_prefabsoft_security_acl_model_PrefabAclObjectIdentity_entries_inheriting" property="entries_inheriting" z="tBEs2++STmdkZIZe3tUdNE95R2M="/>
+        </table:table>
+    </page:list>
+</div>

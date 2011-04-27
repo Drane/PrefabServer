@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_prefabsoft_security_acl_model_PrefabAclSid" items="${prefabaclsids}" z="A10bV61cXGg6ia4GixBM11C7VW4=">
+        <table:table data="${prefabaclsids}" id="l_com_prefabsoft_security_acl_model_PrefabAclSid" path="/prefabaclsids" z="FMxPHOTMcoTMn09EnowPt9GgonM=">
+            <table:column id="c_com_prefabsoft_security_acl_model_PrefabAclSid_principal" property="principal" z="pVyf0v+cwd/5VtZsV2/7rIN4jug="/>
+            <table:column id="c_com_prefabsoft_security_acl_model_PrefabAclSid_sid" property="sid" z="8CHsxSZdaOK/TQN5wNLI9RCOdrQ="/>
+        </table:table>
+    </page:list>
+</div>

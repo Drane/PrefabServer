@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8"/>
+	<jsp:output omit-xml-declaration="yes"/>
+
+<menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category id="c_prefabaclclass" z="BPMg2iKs4sE9E6wtuvh5PfieYLc=">
+            <menu:item id="i_prefabaclclass_new" messageCode="global_menu_new" url="/prefabaclclasses?form" z="qf9hvNYmAi5+G95EuIIjkyO9VaU="/>
+        <menu:item id="i_prefabaclclass_list" messageCode="global_menu_list" url="/prefabaclclasses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="L2LO/kqYILLeS1oCjxA9ewZYAf0="/>
+        </menu:category>
+    <menu:category id="c_prefabaclsid" z="cZSOF9TbS324/xg7WvxoRk/Ez1w=">
+            <menu:item id="i_prefabaclsid_new" messageCode="global_menu_new" url="/prefabaclsids?form" z="YhTxquGyRSyBQ0kNlnbWawrEzuo="/>
+        <menu:item id="i_prefabaclsid_list" messageCode="global_menu_list" url="/prefabaclsids?page=1&amp;size=${empty param.size ? 10 : param.size}" z="7lUqQkGw/Sv/Ul6C8oTmrV/DaQg="/>
+        </menu:category>
+    <menu:category id="c_prefabaclobjectidentity" z="29MKpq9fYVfzSSuSXEJpepXoaZY=">
+            <menu:item id="i_prefabaclobjectidentity_new" messageCode="global_menu_new" url="/prefabaclobjectidentitys?form" z="gMB6/22XsgGAkFQuL1GOecGgJ0A="/>
+        <menu:item id="i_prefabaclobjectidentity_list" messageCode="global_menu_list" url="/prefabaclobjectidentitys?page=1&amp;size=${empty param.size ? 10 : param.size}" z="UPDEC1nFj8saLq3aZIukCH+N8xo="/>
+        </menu:category>
+    <menu:category id="c_prefabaclentry" z="B6bmSDvhR2wQLK+WM3g39Wy8Cas=">
+            <menu:item id="i_prefabaclentry_new" messageCode="global_menu_new" url="/prefabaclentrys?form" z="s2WI3pyUEhT8vmxt+avmkeIcAlU="/>
+        <menu:item id="i_prefabaclentry_list" messageCode="global_menu_list" url="/prefabaclentrys?page=1&amp;size=${empty param.size ? 10 : param.size}" z="l5LCX3kDjgHgY/m4lio2h8e4rBQ="/>
+        </menu:category>
+    </menu:menu>
+</div>

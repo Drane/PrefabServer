@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_prefabsoft_security_acl_model_PrefabAclObjectIdentity" object="${prefabaclobjectidentity}" path="/prefabaclobjectidentitys" z="QyJBk98bkXwajR8hxEQ7kC8DRKM=">
+        <field:display field="object_id_class" id="s_com_prefabsoft_security_acl_model_PrefabAclObjectIdentity_object_id_class" object="${prefabaclobjectidentity}" z="W4jd2r3vLE0NKB8wSFjUhkpwrJM="/>
+        <field:display field="object_id_identity" id="s_com_prefabsoft_security_acl_model_PrefabAclObjectIdentity_object_id_identity" object="${prefabaclobjectidentity}" z="sVdfsX/s72JnNBECeFIjWQTd9z8="/>
+        <field:display field="parent_object" id="s_com_prefabsoft_security_acl_model_PrefabAclObjectIdentity_parent_object" object="${prefabaclobjectidentity}" z="sfurjFFIOyr+Mq00RN4nelMEzeA="/>
+        <field:display field="owner_sid" id="s_com_prefabsoft_security_acl_model_PrefabAclObjectIdentity_owner_sid" object="${prefabaclobjectidentity}" z="qwLNkzKsfzoSSP42h21OYG5H4Hg="/>
+        <field:display field="entries_inheriting" id="s_com_prefabsoft_security_acl_model_PrefabAclObjectIdentity_entries_inheriting" object="${prefabaclobjectidentity}" z="SLKiohrUsdvvXuyGPBUpcsDgQL0="/>
+    </page:show>
+</div>

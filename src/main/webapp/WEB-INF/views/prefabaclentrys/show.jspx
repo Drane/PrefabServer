@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_prefabsoft_security_acl_model_PrefabAclEntry" object="${prefabaclentry}" path="/prefabaclentrys" z="F3bUoSDGYQBNJq7EMDy5kjbq7Q4=">
+        <field:display field="acl_object_identity" id="s_com_prefabsoft_security_acl_model_PrefabAclEntry_acl_object_identity" object="${prefabaclentry}" z="pLOKplvMRVW7eKjn1s59FYUlexQ="/>
+        <field:display field="ace_order" id="s_com_prefabsoft_security_acl_model_PrefabAclEntry_ace_order" object="${prefabaclentry}" z="kPViJL+A/WLMNjr4OEkjDQ1Po3Y="/>
+        <field:display field="sid" id="s_com_prefabsoft_security_acl_model_PrefabAclEntry_sid" object="${prefabaclentry}" z="wQC4k+i4gFfy+qpbPr8zP8XBNgA="/>
+        <field:display field="mask" id="s_com_prefabsoft_security_acl_model_PrefabAclEntry_mask" object="${prefabaclentry}" z="tNUmQxKrSF3JRQg+xvjj6TbqYu4="/>
+        <field:display field="granting" id="s_com_prefabsoft_security_acl_model_PrefabAclEntry_granting" object="${prefabaclentry}" z="c0AvxNwyVzB9LGnzYbyKkfG8fmk="/>
+        <field:display field="audit_success" id="s_com_prefabsoft_security_acl_model_PrefabAclEntry_audit_success" object="${prefabaclentry}" z="k57Q3T48gKxic6t9k+dM9XInQVg="/>
+        <field:display field="audit_failure" id="s_com_prefabsoft_security_acl_model_PrefabAclEntry_audit_failure" object="${prefabaclentry}" z="AbpVB8qv4JmC6WbXUxiugSRiFs4="/>
+    </page:show>
+</div>
