@@ -18,3 +18,8 @@ field string name
 // Spring Roo 1.1.2.RELEASE [rev fbc33bb] log closed at 2011-05-09 21:57:48
 // Spring Roo 1.1.3.RELEASE [rev 4404ffb] log opened at 2011-05-13 22:07:42
 persistence setup --database MYSQL --provider HIBERNATE --userName root --databaseName prefabsoft
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log closed at 2011-05-13 22:33:25
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log opened at 2011-05-13 22:33:38
+logging setup --level TRACE --package PROJECT 
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log closed at 2011-05-13 23:16:54
+// Spring Roo 1.1.3.RELEASE [rev 4404ffb] log opened at 2011-05-14 01:01:14
