@@ -12,7 +12,7 @@
 			<supported-locale>de</supported-locale>
 		</locale-config>
 		<resource-bundle>
-			<base-name>com.prefabsoft.messages</base-name>
+			<base-name>com.prefabsoft.jsf.util.message</base-name>
 			<var>msg</var>
 		</resource-bundle>
 		<!-- http://www.mkyong.com/jsf2/jsf-2-0-and-resource-bundles-example/ -->

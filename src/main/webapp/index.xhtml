@@ -1,21 +1,79 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:util="http://java.sun.com/jsf/composite/util">
-   <h:head>
-      <title>#{resourceBundle['autoCompleteWindowTitle']}</title>
-   </h:head>
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+<head>
+<title>test
+</title>
+</head>
 
-   <h:body>
-      <div style="padding: 20px;">
-         <h:form>
-            <h:panelGrid columns="2">
-               #{resourceBundle['locationsPrompt']}
-               <util:autoComplete value="#{user.country}"
-                     completionItems="#{autoComplete.locations}" />
-            </h:panelGrid>
-         </h:form>
-      </div>
-   </h:body>
-</html> 
+<body>
+
+	<h:outputLink
+		id="loginLink"
+		value="javascript:void(0)"
+		onclick="dlg.show()"
+		title="login">
+		<p:graphicImage value="/images/show.png" />
+	</h:outputLink>
+	<p:growl
+		id="growl"
+		showDetail="true"
+		life="3000" />
+
+	<p:dialog
+		id="dialog"
+		header="Login"
+		widgetVar="dlg">
+		<h:form>
+
+			<h:panelGrid
+				columns="2"
+				cellpadding="5">
+				<h:outputLabel
+					for="username"
+					value="Username: *" />
+				<p:inputText
+					value="#{loginBean.username}"
+					id="username"
+					required="true"
+					label="username" />
+
+				<h:outputLabel
+					for="password"
+					value="Password: * " />
+				<h:inputSecret
+					value="#{loginBean.password}"
+					id="password"
+					required="true"
+					label="password" />
+
+				<f:facet name="footer">
+					<p:commandButton
+						value="Login"
+						update="growl"
+						actionListener="#{loginBean.login}"
+						oncomplete="handleLoginRequest(xhr, status, args)" />
+				</f:facet>
+			</h:panelGrid>
+		</h:form>
+	</p:dialog>
+	<script type="text/javascript">
+		function handleLoginRequest(xhr, status, args) {
+			if (args.validationFailed || !args.loggedIn) {
+				jQuery('#dialog').parent().effect("shake", {
+					times : 3
+				}, 100);
+			} else {
+				dlg.hide();
+				jQuery('#loginLink').fadeOut();
+			}
+		}
+	</script>
+
+</body>
+
+</html>

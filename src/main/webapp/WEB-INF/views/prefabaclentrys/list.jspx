@@ -7,9 +7,11 @@
             <table:column id="c_com_prefabsoft_security_acl_model_PrefabAclEntry_acl_object_identity" property="acl_object_identity" z="y1EkBUMla6JiB1dx9GQ6cpVGmPI="/>
             <table:column id="c_com_prefabsoft_security_acl_model_PrefabAclEntry_ace_order" property="ace_order" z="pui2/d5xFE5OmvEB6oz3h59JAsI="/>
             <table:column id="c_com_prefabsoft_security_acl_model_PrefabAclEntry_sid" property="sid" z="k9tZRR22WYvh/sfmnobfvBvOkh4="/>
-            <table:column id="c_com_prefabsoft_security_acl_model_PrefabAclEntry_mask" property="mask" z="xdpFZ8qBQFhs2sSJ+HWcYTO/ICE="/>
+            
             <table:column id="c_com_prefabsoft_security_acl_model_PrefabAclEntry_granting" property="granting" z="+uTCwH8GVYN3lnGCsestj18/cXU="/>
             <table:column id="c_com_prefabsoft_security_acl_model_PrefabAclEntry_audit_success" property="audit_success" z="0wYrUn/cIE24UqR9LLPJJ/Xc+zM="/>
+        
+        <table:column id="c_com_prefabsoft_security_acl_model_PrefabAclEntry_mask" property="mask" z="xdpFZ8qBQFhs2sSJ+HWcYTO/ICE="/>
         </table:table>
     </page:list>
 </div>

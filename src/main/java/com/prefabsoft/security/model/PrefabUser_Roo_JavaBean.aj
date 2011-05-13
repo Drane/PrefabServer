@@ -11,6 +11,14 @@ import java.util.Set;
 
 privileged aspect PrefabUser_Roo_JavaBean {
     
+    public String PrefabUser.getUserName() {
+        return this.userName;
+    }
+    
+    public void PrefabUser.setUserName(String userName) {
+        this.userName = userName;
+    }
+    
     public String PrefabUser.getEmailAddress() {
         return this.emailAddress;
     }
@@ -19,12 +27,28 @@ privileged aspect PrefabUser_Roo_JavaBean {
         this.emailAddress = emailAddress;
     }
     
+    public String PrefabUser.getConfirmEmailAddress() {
+        return this.confirmEmailAddress;
+    }
+    
+    public void PrefabUser.setConfirmEmailAddress(String confirmEmailAddress) {
+        this.confirmEmailAddress = confirmEmailAddress;
+    }
+    
     public String PrefabUser.getPassword() {
         return this.password;
     }
     
     public void PrefabUser.setPassword(String password) {
         this.password = password;
+    }
+    
+    public String PrefabUser.getConfirmPassword() {
+        return this.confirmPassword;
+    }
+    
+    public void PrefabUser.setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
     }
     
     public Boolean PrefabUser.getEnabled() {

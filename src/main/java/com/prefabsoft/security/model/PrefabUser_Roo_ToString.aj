@@ -13,12 +13,15 @@ privileged aspect PrefabUser_Roo_ToString {
         sb.append("AccountNonLocked: ").append(getAccountNonLocked()).append(", ");
         sb.append("Active: ").append(getActive()).append(", ");
         sb.append("Authorities: ").append(getAuthorities() == null ? "null" : getAuthorities().size()).append(", ");
+        sb.append("ConfirmEmailAddress: ").append(getConfirmEmailAddress()).append(", ");
+        sb.append("ConfirmPassword: ").append(getConfirmPassword()).append(", ");
         sb.append("CredentialsNonExpired: ").append(getCredentialsNonExpired()).append(", ");
         sb.append("DateCreate: ").append(getDateCreate()).append(", ");
         sb.append("DateUpdate: ").append(getDateUpdate()).append(", ");
         sb.append("EmailAddress: ").append(getEmailAddress()).append(", ");
         sb.append("Enabled: ").append(getEnabled()).append(", ");
         sb.append("Password: ").append(getPassword()).append(", ");
+        sb.append("UserName: ").append(getUserName()).append(", ");
         sb.append("Username: ").append(getUsername());
         return sb.toString();
     }
