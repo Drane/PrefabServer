@@ -1,0 +1,41 @@
+<aspectj>
+<aspects>
+<aspect name="com.prefabsoft.security.acl.model.PrefabAclSid_Roo_Entity"/>
+<aspect name="com.prefabsoft.model.PrefabResource_Roo_Configurable"/>
+<aspect name="com.prefabsoft.security.acl.model.PrefabAclSid_Roo_Configurable"/>
+<aspect name="com.prefabsoft.security.acl.model.PrefabAclClass_Roo_ToString"/>
+<aspect name="com.prefabsoft.security.acl.model.PrefabAclClass_Roo_JavaBean"/>
+<aspect name="com.prefabsoft.security.model.PrefabUser_Roo_Entity"/>
+<aspect name="com.prefabsoft.security.acl.model.PrefabAclEntry_Roo_Configurable"/>
+<aspect name="com.prefabsoft.security.acl.model.PrefabAclSid_Roo_JavaBean"/>
+<aspect name="com.prefabsoft.security.model.PrefabAuthority_Roo_JavaBean"/>
+<aspect name="com.prefabsoft.security.model.PrefabUser_Roo_ToString"/>
+<aspect name="com.prefabsoft.security.acl.model.PrefabAclEntry_Roo_JavaBean"/>
+<aspect name="com.prefabsoft.security.acl.web.PrefabAclSidController_Roo_Controller"/>
+<aspect name="com.prefabsoft.security.web.ApplicationConversionServiceFactoryBean_Roo_ConversionService"/>
+<aspect name="com.prefabsoft.security.model.PrefabUser_Roo_JavaBean"/>
+<aspect name="com.prefabsoft.security.acl.web.PrefabAclClassController_Roo_Controller"/>
+<aspect name="com.prefabsoft.security.acl.web.ApplicationConversionServiceFactoryBean_Roo_ConversionService"/>
+<aspect name="com.prefabsoft.security.model.PrefabAuthority_Roo_ToString"/>
+<aspect name="com.prefabsoft.security.acl.model.PrefabAclSid_Roo_ToString"/>
+<aspect name="com.prefabsoft.security.acl.model.PrefabAclObjectIdentity_Roo_Entity"/>
+<aspect name="com.prefabsoft.security.model.PrefabUser_Roo_Finder"/>
+<aspect name="com.prefabsoft.security.acl.model.PrefabAclEntry_Roo_ToString"/>
+<aspect name="com.prefabsoft.security.model.PrefabAuthority_Roo_Configurable"/>
+<aspect name="com.prefabsoft.security.acl.web.PrefabAclEntryController_Roo_Controller"/>
+<aspect name="com.prefabsoft.security.model.PrefabUser_Roo_Configurable"/>
+<aspect name="com.prefabsoft.model.PrefabResource_Roo_Entity"/>
+<aspect name="com.prefabsoft.security.acl.model.PrefabAclClass_Roo_Entity"/>
+<aspect name="com.prefabsoft.security.acl.model.PrefabAclObjectIdentity_Roo_JavaBean"/>
+<aspect name="com.prefabsoft.security.acl.model.PrefabAclClass_Roo_Configurable"/>
+<aspect name="com.prefabsoft.security.acl.model.PrefabAclObjectIdentity_Roo_Configurable"/>
+<aspect name="com.prefabsoft.security.acl.model.PrefabAclEntry_Roo_Entity"/>
+<aspect name="com.prefabsoft.security.acl.model.PrefabAclObjectIdentity_Roo_ToString"/>
+<aspect name="com.prefabsoft.security.acl.web.PrefabAclObjectIdentityController_Roo_Controller"/>
+<aspect name="com.prefabsoft.security.model.PrefabAuthority_Roo_Finder"/>
+<aspect name="com.prefabsoft.model.PrefabResource_Roo_JavaBean"/>
+<aspect name="com.prefabsoft.model.PrefabResource_Roo_Finder"/>
+<aspect name="com.prefabsoft.security.model.PrefabAuthority_Roo_Entity"/>
+</aspects>
+</aspectj>
+

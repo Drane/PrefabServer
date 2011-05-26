@@ -1,0 +1,15 @@
+@CHARSET "ISO-8859-1";
+
+.ui-widget {
+    font-family: Verdana, Lucida Sans,Arial,sans-serif;
+    font-size: 0.8em;
+}
+
+.ui-messages-info-detail, .ui-messages-warn-detail, .ui-messages-error-detail, .ui-messages-fatal-detail, .ui-message-info-detail, .ui-message-warn-detail, .ui-message-error-detail, .ui-message-fatal-detail {
+    font-size: 0.7em;
+    margin-left: 1px;
+}
+
+.ui-message-error-icon {
+    margin-top: -1px;
+}

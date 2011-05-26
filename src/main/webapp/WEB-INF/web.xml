@@ -86,6 +86,7 @@
 		<error-code>404</error-code>
 		<location>/resourceNotFound</location>
 	</error-page>
+	<!-- prefabSOFT Spring>JSF config -->
 	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>
 		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -96,20 +97,43 @@
 		<url-pattern>/faces/*</url-pattern>
 		<url-pattern>*.jsf</url-pattern>
 	</servlet-mapping>
+
+	<!-- Use JSF view templates saved as *.xhtml, for use with Facelets -->
 	<context-param>
-		<param-name>com.sun.faces.enableMissingResourceLibraryDetection</param-name>
-		<param-value>true</param-value>
+		<param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+		<param-value>.xhtml</param-value>
+	</context-param>
+
+	<!-- Serves static resource content from .jar files such as spring-faces.jar -->
+	<servlet>
+		<servlet-name>Resource Servlet</servlet-name>
+		<servlet-class>org.springframework.js.resource.ResourceServlet</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+
+	<!-- Map all /resources requests to the Resource Servlet for handling -->
+	<servlet-mapping>
+		<servlet-name>Resource Servlet</servlet-name>
+		<url-pattern>/resources/*</url-pattern>
+	</servlet-mapping>
+
+	<context-param>
+		<param-name>primefaces.PRIVATE_CAPTCHA_KEY</param-name>
+		<param-value>6LcYW8QSAAAAAAt10CYG-gpNRcl1gshfx3IWm6Qx</param-value>
 	</context-param>
 	<context-param>
-		<description>State saving method: 'client' or 'server' (=default). See JSF Specification 2.5.2</description>
-		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
-		<param-value>client</param-value>
+		<param-name>primefaces.PUBLIC_CAPTCHA_KEY</param-name>
+		<param-value>6LcYW8QSAAAAAOyYP3FVa_1YJ2bf248PEVI4xy4L</param-value>
 	</context-param>
 	<context-param>
-		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
-		<param-value>resources.application</param-value>
+		<param-name>primefaces.THEME</param-name>
+		<param-value>redmond</param-value>
 	</context-param>
-	<listener>
-		<listener-class>com.sun.faces.config.ConfigureListener</listener-class>
-	</listener>
+
+	<!-- Spring security facelets taglib -->
+	<!-- http://static.springsource.org/spring-webflow/docs/2.3.0.RELEASE/reference/html/ch13s11.html
+	<context-param>
+		<param-name>javax.faces.FACELETS_LIBRARIES</param-name>
+		<param-value>/WEB-INF/springsecurity.taglib.xml</param-value>
+	</context-param> -->
 </web-app>

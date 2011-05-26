@@ -1,0 +1,67 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:places="http://java.sun.com/jsf/composite/places"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+	
+	
+<!-- 	<rich:panel> -->
+<!-- 		<f:facet name="header"> -->
+<!-- 			<h:panelGroup> -->
+<!-- 				<h:outputText value="User information" /> -->
+<!-- 				<a4j:status> -->
+<!-- 					<f:facet name="start"> -->
+<!-- 						<h:graphicImage value="/images/ai.gif" alt="ai" -->
+<!-- 							style="height:12px;width:12px;" /> -->
+<!-- 					</f:facet> -->
+<!-- 				</a4j:status> -->
+<!-- 			</h:panelGroup> -->
+<!-- 		</f:facet> -->
+<!-- 		<h:panelGrid columns="3">  -->
+<!--                 <h:outputText value="Name:" /> -->
+<!--                 <h:inputText value="" id="name"> -->
+<!--                     <rich:validator /> -->
+<!--                 </h:inputText> -->
+<!--                 <rich:message for="name" /> -->
+<!--                 <h:outputText value="Email" /> -->
+<!--                 <h:inputText value="" id="email" validatorMessage="bad email"> -->
+<!--                     <rich:validator /> -->
+<!--                 </h:inputText> -->
+<!--                 <rich:message for="email" /> -->
+<!--                 <h:outputText value="Age" /> -->
+<!--                 <h:inputText value="" id="age"> -->
+<!--                     <rich:validator /> -->
+<!--                 </h:inputText> -->
+<!--                 <rich:message for="age" /> -->
+<!--                 <h:outputText value="I agree the terms" /> -->
+<!--                 <h:selectBooleanCheckbox value="" id="agreed"> -->
+<!--                     <rich:validator/> -->
+<!--                 </h:selectBooleanCheckbox> -->
+<!--                 <rich:message for="agreed" /> -->
+<!--             </h:panelGrid> -->
+            
+            
+<!-- 	</rich:panel> -->
+	<h:outputText value="Name:" />
+                <h:inputText value="" id="name">
+                    <rich:validator />
+                </h:inputText>
+                <rich:message for="name" />
+                <h:outputText value="Email" />
+                <h:inputText value="" id="email" validatorMessage="bad email">
+                    <rich:validator />
+                </h:inputText>
+                <rich:message for="email" />
+                <h:outputText value="Age" />
+                <h:inputText value="" id="age">
+                    <rich:validator />
+                </h:inputText>
+                <rich:message for="age" />
+                <h:outputText value="I agree the terms" />
+                <h:selectBooleanCheckbox value="" id="agreed">
+                    <rich:validator/>
+                </h:selectBooleanCheckbox>
+                <rich:message for="agreed" />
+</ui:composition>

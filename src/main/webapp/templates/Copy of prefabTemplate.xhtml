@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:sf="http://www.springframework.org/tags/faces"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	>
+<!-- xmlns:sec="http://www.springframework.org/security/tags" -->
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title><ui:insert name="title">Default title</ui:insert></title>
+	
+	 
+<!-- <sf:includeStyles themePath="/styles/" theme="foobar"/> -->
+<!-- http://static.springsource.org/spring-webflow/docs/current/reference/html/ch13.html -->
+	
+	
+	<sf:includeStyles />
+	<sf:includeScripts />
+	
+	<ui:insert name="headIncludes"/>
+</h:head>
+
+<h:body>
+	<h:outputStylesheet library="css" name="style.css" target="head" />
+
+	<div id="header">
+		<ui:insert name="header">
+	    	Header area.  See comments below this line in the source.
+			
+			<p:growl id="growl" showDetail="true" sticky="true" />
+			
+			<p:ajaxStatus onstart="statusDialog.show();" onsuccess="statusDialog.hide();" onerror="errorDialog.show();"/>
+						
+			<p:dialog modal="true" widgetVar="statusDialog" header="Status"
+					  draggable="false" closable="false">
+			</p:dialog>
+				<h:graphicImage library="images" value="ajax-loader.gif" />
+			
+			<p:dialog modal="true" widgetVar="errorDialog" header="Javascript Error"
+					draggable="false" closable="true">
+					<h:outputText value="A javascript error occured."/>
+			</p:dialog>
+	
+				<!--  include your header file or uncomment the include below and create header.xhtml in this directory -->
+				<!-- <ui:include src="header.xhtml"/> -->
+				
+<!-- 				<sec:authorize ifAllGranted="ROLE_ADMIN"> -->
+<!-- 					You are an admin -->
+<!-- 				</sec:authorize> -->
+			
+<!-- 				<sec:authorize ifNotGranted="ROLE_USER"> -->
+<!-- 					You are a user -->
+<!-- 				</sec:authorize> -->
+			
+<!-- 				<sec:authorize ifAnyGranted="ROLE_ADMIN, ROLE_USER"> -->
+<!-- 					You are an admin or a user -->
+<!-- 				</sec:authorize> -->
+				
+				<!-- Rendered only if user has all of the listed roles -->
+<!-- 				<h:outputText value="You are an admin" rendered="#{sec:areAllGranted('ROLE_ADMIN')}"/>	 -->
+				
+				<!-- Rendered only if user does not have any of the listed roles -->
+<!-- 				<h:outputText value="You are not a user" rendered="#{sec:areNotGranted('ROLE_USER')}"/>	 -->
+				
+				<!-- Rendered only if user has any of the listed roles -->
+<!-- 				<h:outputText value="You are an admin or a user" rendered="#{sec:areAnyGranted('ROLE_ADMIN ROLE_USER')}"/>	 -->
+				
+				<!-- Rendered only if user has access to given HTTP method/URL as defined in Spring Security configuration -->
+<!-- 				<h:outputText value="Lorem ipsum dolor sit amet" rendered="#{sec:isAllowed('/secured/foo', 'POST')}"/> -->
+		</ui:insert>
+	</div>
+
+
+	<div id="content">
+		<ui:insert name="content">
+    	Content area.  See comments below this line in the source.
+    	<!--  include your content file or uncomment the include below and create content.xhtml in this directory -->
+			<!-- <div> -->
+			<!-- <ui:include src="content.xhtml"/> -->
+			<!-- </div> -->
+		</ui:insert>
+	</div>
+
+	<div id="footer">
+		<ui:insert name="footer">
+    	Footer area.  See comments below this line in the source.
+    	<!--  include your header file or uncomment the include below and create footer.xhtml in this directory -->
+			<!--<ui:include src="footer.xhtml"/>  -->
+		</ui:insert>
+	</div>
+
+</h:body>
+
+</html>

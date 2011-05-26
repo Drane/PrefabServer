@@ -5,75 +5,24 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.prime.com.tr/ui">
-<head>
-<title>test
-</title>
-</head>
+<h:head>
+<title>test</title>
+</h:head>
 
-<body>
-
-	<h:outputLink
-		id="loginLink"
-		value="javascript:void(0)"
-		onclick="dlg.show()"
-		title="login">
-		<p:graphicImage value="/images/show.png" />
-	</h:outputLink>
-	<p:growl
-		id="growl"
-		showDetail="true"
-		life="3000" />
-
-	<p:dialog
-		id="dialog"
-		header="Login"
-		widgetVar="dlg">
-		<h:form>
-
-			<h:panelGrid
-				columns="2"
-				cellpadding="5">
-				<h:outputLabel
-					for="username"
-					value="Username: *" />
-				<p:inputText
-					value="#{loginBean.username}"
-					id="username"
-					required="true"
-					label="username" />
-
-				<h:outputLabel
-					for="password"
-					value="Password: * " />
-				<h:inputSecret
-					value="#{loginBean.password}"
-					id="password"
-					required="true"
-					label="password" />
-
-				<f:facet name="footer">
-					<p:commandButton
-						value="Login"
-						update="growl"
-						actionListener="#{loginBean.login}"
-						oncomplete="handleLoginRequest(xhr, status, args)" />
-				</f:facet>
-			</h:panelGrid>
-		</h:form>
-	</p:dialog>
-	<script type="text/javascript">
-		function handleLoginRequest(xhr, status, args) {
-			if (args.validationFailed || !args.loggedIn) {
-				jQuery('#dialog').parent().effect("shake", {
-					times : 3
-				}, 100);
-			} else {
-				dlg.hide();
-				jQuery('#loginLink').fadeOut();
-			}
-		}
-	</script>
-
-</body>
+<h:body>
+	<h:form>
+		<h:messages/>
+	
+		<p:panel id="panel" header="testing">
+			<p:inputText id="testString"
+				valueChangeListener="#{prefabUser.validateUserNameChange}" 
+				value="#{prefabUser.userName}">
+				<p:ajax event="blur" update="panel"/>
+			</p:inputText>
+			<h:message for="testString"/>
+			<p:inputText/>
+		</p:panel>
+	</h:form>
+</h:body>
 
 </html>

@@ -1,66 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"   
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:composite="http://java.sun.com/jsf/composite"
-      xmlns:p="http://primefaces.prime.com.tr/ui">
-      
-    <composite:interface>
-    	<composite:attribute name="nameLable" />
-    	<composite:attribute name="nameValue" />
-    	<composite:attribute name="emailLable" />
-    	<composite:attribute name="emailValue" />
-    	<composite:attribute name="emailConfirmLable" />
-    	<composite:attribute name="emailConfirmValue" />
-    	<composite:attribute name="passwordLable" />
-    	<composite:attribute name="passwordValue" />
-    	<composite:attribute name="passwordConfirmLable" />
-    	<composite:attribute name="passwordConfirmValue" />
-   		<composite:attribute name="registerButtonText" />
-    	<composite:attribute name="registerButtonAction" 
-    		method-signature="java.lang.String action()" />
-    		
-    </composite:interface>
-	
-	<composite:implementation>
-	
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+
+<composite:interface>
+	<composite:attribute name="nameLabel" />
+	<composite:attribute name="nameValue" />
+	<composite:attribute name="emailLabel" />
+	<composite:attribute name="emailValue" />
+	<composite:attribute name="emailConfirmLabel" />
+	<composite:attribute name="emailConfirmValue" />
+	<composite:attribute name="passwordLabel" />
+	<composite:attribute name="passwordValue" />
+	<composite:attribute name="passwordConfirmLabel" />
+	<composite:attribute name="passwordConfirmValue" />
+	<composite:attribute name="registerButtonLabel" />
+	<composite:attribute name="registerButtonAction"
+		method-signature="java.lang.String action()" />
+	<composite:attribute name="managedBean" />
+</composite:interface>
+
+<composite:implementation>
+
+	<f:loadBundle
+		basename="com.prefabsoft.security.model.registration_messages"
+		var="regmsg" />
+		
+	<h:outputLink id="registerLink" value="javascript:void(0)" onclick="regDlg.show()" title="login">     
+        <h:outputText value="register" />  
+    </h:outputLink>  
+		
+	<p:dialog id="registrationDialog" 
+				  minWidth="550" minHeight="225"
+				  header="User Registration" 
+				  widgetVar="regDlg"
+				  severity="alert"
+				  showEffect="puff"
+				  hideEffect="explode"
+				  >
 		<h:form>
-			
-			<h:message for="textPanel" style="color:red;" />
-			<p:messages showDetail="true" autoUpdate="true"/>  
-			
-			<h:panelGrid columns="3" id="textPanel">
-			
-				#{cc.attrs.nameLable} : 
-				<h:inputText id="name" value="#{cc.attrs.nameValue}" />
-				<p:message for="name" />
-       				
-				#{cc.attrs.emailLable} : 
-				<h:inputText id="email" value="#{cc.attrs.emailValue}" />
-				<p:message for="email" />
-				
-				#{cc.attrs.emailConfirmLable} : 
-				<h:inputText id="emailConfirm" value="#{cc.attrs.emailConfirmValue}"/>
-				<p:message for="emailConfirm" />
-								
-				#{cc.attrs.passwordLable} : 
-				<p:password id="password" value="#{cc.attrs.passwordValue}" />
-				<p:message for="password" />
-								
-				#{cc.attrs.passwordConfirmLable} : 
-				<p:password id="passwordConfirm" value="#{cc.attrs.passwordConfirmValue}" />
-				<p:message for="passwordConfirm" />
-								
-			</h:panelGrid>
-			
-			<h:commandButton action="#{cc.attrs.registerButtonAction}" 
-				value="#{cc.attrs.registerButtonText}"
-			/>
-		
-		</h:form>
-		
-	</composite:implementation>
 	
+			<p:messages globalOnly="true" autoUpdate="true" showDetail="true"
+				showSummary="true" />
+	
+			<h:panelGrid columns="3" id="registerGrid">
+				<h:outputLabel value="#{cc.attrs.nameLabel}:" for="name" />
+				<p:inputText id="name" value="#{cc.attrs.managedBean.userName}"
+					size="24"
+					valueChangeListener="#{cc.attrs.managedBean.validateUserNameChange}">
+					<p:focus />
+					<p:ajax event="blur" update="nameMessage" />
+				</p:inputText>
+				<p:message id="nameMessage" for="name" />
+	
+				<h:outputLabel value="#{cc.attrs.emailLabel}:" for="email" />
+				<p:inputText id="email" value="#{cc.attrs.managedBean.emailAddress}"
+					size="24"
+					valueChangeListener="#{cc.attrs.managedBean.validateEmailAddressChange}">
+					<p:ajax event="blur" update="emailMessage" />
+				</p:inputText>
+				<p:message id="emailMessage" for="email" />
+	
+				<h:outputLabel value="#{cc.attrs.emailConfirmLabel}:"
+					for="emailConfirm" />
+				<p:inputText id="emailConfirm"
+					value="#{cc.attrs.managedBean.confirmEmailAddress}" size="24">
+					<p:ajax event="blur" update="emailConfirmMessage" />
+				</p:inputText>
+				<p:message id="emailConfirmMessage" for="emailConfirm" />
+	
+				<h:outputLabel value="#{cc.attrs.passwordLabel}:" for="password" />
+				<p:password id="password" value="#{cc.attrs.managedBean.password}"
+					size="24" inline="true">
+					<p:ajax event="blur" update="passwordMessage" />
+				</p:password>
+				<p:message id="passwordMessage" for="password" />
+	
+				<h:outputLabel value="#{cc.attrs.passwordConfirmLabel}:"
+					for="passwordConfirm" />
+				<p:password id="passwordConfirm"
+					value="#{cc.attrs.managedBean.confirmPassword}" size="24"
+					feedback="false">
+					<p:ajax event="blur" update="passwordConfirmMessage" />
+				</p:password>
+				<p:message id="passwordConfirmMessage" for="passwordConfirm" />
+	
+			</h:panelGrid>
+			<h:panelGroup layout="block">
+				<h:outputLabel value="Captcha:" for="captcha" />
+				<p:captcha id="captcha" label="Captcha" />
+			</h:panelGroup>
+	
+			<p:commandButton actionListener="#{cc.attrs.managedBean.register}"
+				style="float: right; margin-right: 15px; margin-top: 10px;"
+				value="#{cc.attrs.registerButtonLabel}"
+				oncomplete="handleRegistrationRequest(xhr, status, args)" />
+	
+	
+		</h:form>
+	</p:dialog>
+	
+	<script type="text/javascript">
+		function handleRegistrationRequest(xhr, status, args) {
+			//alert(args.validationFailed);
+			//alert(args.registrationOk);
+			if (args.validationFailed || !args.registrationOk) {
+				jQuery('##{cc.clientId}:registrationDialog').parent().effect("shake", {
+					times : 3
+				}, 100);
+				jQuery('##{cc.clientId}:registerLink').fadeOut();
+			} else {
+				regDlg.hide();
+				jQuery('##{cc.clientId}:registerLink').fadeOut();
+			}
+		}
+	</script>
+	
+</composite:implementation>
+
 </html>

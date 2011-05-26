@@ -10,6 +10,14 @@ import javax.persistence.TypedQuery;
 
 privileged aspect PrefabUser_Roo_Finder {
     
+    public static TypedQuery<PrefabUser> PrefabUser.findPrefabUsersByEmailAddressEquals(String emailAddress) {
+        if (emailAddress == null || emailAddress.length() == 0) throw new IllegalArgumentException("The emailAddress argument is required");
+        EntityManager em = PrefabUser.entityManager();
+        TypedQuery<PrefabUser> q = em.createQuery("SELECT o FROM PrefabUser AS o WHERE o.emailAddress = :emailAddress", PrefabUser.class);
+        q.setParameter("emailAddress", emailAddress);
+        return q;
+    }
+    
     public static TypedQuery<PrefabUser> PrefabUser.findPrefabUsersByEmailAddressLike(String emailAddress) {
         if (emailAddress == null || emailAddress.length() == 0) throw new IllegalArgumentException("The emailAddress argument is required");
         emailAddress = emailAddress.replace('*', '%');
@@ -22,6 +30,14 @@ privileged aspect PrefabUser_Roo_Finder {
         EntityManager em = PrefabUser.entityManager();
         TypedQuery<PrefabUser> q = em.createQuery("SELECT o FROM PrefabUser AS o WHERE LOWER(o.emailAddress) LIKE LOWER(:emailAddress)", PrefabUser.class);
         q.setParameter("emailAddress", emailAddress);
+        return q;
+    }
+    
+    public static TypedQuery<PrefabUser> PrefabUser.findPrefabUsersByUserNameEquals(String userName) {
+        if (userName == null || userName.length() == 0) throw new IllegalArgumentException("The userName argument is required");
+        EntityManager em = PrefabUser.entityManager();
+        TypedQuery<PrefabUser> q = em.createQuery("SELECT o FROM PrefabUser AS o WHERE o.userName = :userName", PrefabUser.class);
+        q.setParameter("userName", userName);
         return q;
     }
     

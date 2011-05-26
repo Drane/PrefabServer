@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	>
+
+<composite:interface>
+	<composite:attribute name="nameLabel" />
+	<composite:attribute name="nameValue" />
+	<composite:attribute name="emailLabel" />
+	<composite:attribute name="emailValue" />
+	<composite:attribute name="emailConfirmLabel" />
+	<composite:attribute name="emailConfirmValue" />
+	<composite:attribute name="passwordLabel" />
+	<composite:attribute name="passwordValue" />
+	<composite:attribute name="passwordConfirmLabel" />
+	<composite:attribute name="passwordConfirmValue" />
+	<composite:attribute name="registerButtonLabel" />
+	<composite:attribute name="registerButtonAction"
+		method-signature="java.lang.String action()" />
+	<composite:attribute name="managedBean" />
+</composite:interface>
+
+<composite:implementation>
+
+	<f:loadBundle
+		basename="com.prefabsoft.security.model.registration_messages"
+		var="regmsg" />
+		
+	<p:panel header="User Registration">
+	</p:panel>
+	<h:form>
+<!-- 		<f:event type="postValidate" -->
+<!-- 			listener="#{cc.attrs.managedBean.validate}" /> -->
+		<p:message for="textPanel" style="color:red;" />
+		<p:messages showDetail="true" autoUpdate="true" showSummary="false"/>  
+<!-- 		<h:growl id="growl" showDetail="false" sticky="false" -->
+<!-- 			globalOnly="false" /> -->
+
+		<h:panelGrid columns="3" id="textPanel">
+		
+			#{cc.attrs.nameLabel} : 
+			<p:inputText id="name" value="#{cc.attrs.nameValue}" 
+				valueChangeListener="#{cc.attrs.managedBean.validateUserNameChange}">
+				<p:focus />
+				<p:ajax event="blur" update="nameMessage"/>
+			</p:inputText>
+			<p:message id="nameMessage" for="name" />
+		    				
+			#{cc.attrs.emailLabel} : 
+			<p:inputText id="email" value="#{cc.attrs.emailValue}"
+				valueChangeListener="#{cc.attrs.managedBean.validateEmailAddressChange}">
+				<p:ajax event="blur" update="emailMessage" process="@this" />
+			</p:inputText>
+			<p:message id="emailMessage" for="email" />
+				
+			#{cc.attrs.emailConfirmLabel} : 
+			<p:inputText id="emailConfirm" value="#{cc.attrs.emailConfirmValue}">
+				<p:ajax event="blur" update="emailConfirmMessage" process="@this" />
+			</p:inputText>
+			<p:message id="emailConfirmMessage" for="emailConfirm" />
+								
+			#{cc.attrs.passwordLabel} : 
+			<p:password id="password" value="#{cc.attrs.passwordValue}">
+				<p:ajax event="blur" update="passwordMessage" />
+			</p:password>
+			<p:message id="passwordMessage" for="password" />
+								
+			#{cc.attrs.passwordConfirmLabel} : 
+			<p:password id="passwordConfirm"
+			value="#{cc.attrs.passwordConfirmValue}">
+				<p:ajax event="blur" update="passwordConfirmMessage" />
+			</p:password>
+			<p:message id="passwordConfirmMessage" for="passwordConfirm" />
+
+		</h:panelGrid>
+
+		<p:captcha label="Captcha" />
+
+		<h:commandButton action="#{cc.attrs.registerButtonAction}"
+			value="#{cc.attrs.registerButtonLabel}" />
+
+	</h:form>
+
+</composite:implementation>
+
+</html>
